@@ -13,8 +13,6 @@ import com.sple.slidingpanellayout_example.R;
 
 public class RecyclerHolder extends RecyclerView.ViewHolder {//implements View.OnClickListener {
 
-    public LinearLayout llContainer;
-
     public TextView tvData;
 
     public RecyclerHolder(View _v) {
@@ -31,10 +29,12 @@ public class RecyclerHolder extends RecyclerView.ViewHolder {//implements View.O
 
     /*@Override
     public void onClick(View v) {
-        Context mainContext = v.getContext();
+        if(v != null) {
+            Context mainContext = v.getContext();
 
-        if(mainContext instanceof Main && tvData != null) {
-            ((Main) mainContext).initPager(String.valueOf(tvData.getText()));
+            if(mainContext instanceof Main && tvData != null) {
+                ((Main) mainContext).initPager(String.valueOf(tvData.getText()));
+            }
         }
     }*/
 }

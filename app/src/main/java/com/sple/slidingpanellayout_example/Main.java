@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import helper.MyViewPager;
+import helper.PagerAdapter;
 import helper.ReaderViewPagerTransformer;
 import helper.RecyclerAdapter;
 
@@ -84,7 +85,6 @@ public class Main extends AppCompatActivity implements ViewPager.OnPageChangeLis
             public boolean onTouch(View v, MotionEvent e) {
 
                 if(vpPager != null) {
-                    //Log.v("111", vpPager.getCurrentItem() + "");
                     if(vpPager.getCurrentItem() > 0) {
                         return vpPager.onTouchEvent(e);
                     } else {
@@ -96,6 +96,7 @@ public class Main extends AppCompatActivity implements ViewPager.OnPageChangeLis
         });
 
         spMain.setPanelSlideListener(this);
+
         rvRecycler = (RecyclerView) findViewById(R.id.rvRecycler);
         rvRecycler.setHasFixedSize(true);
         LinearLayoutManager almp = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -127,19 +128,14 @@ public class Main extends AppCompatActivity implements ViewPager.OnPageChangeLis
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }

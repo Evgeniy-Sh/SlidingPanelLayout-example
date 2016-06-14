@@ -22,7 +22,7 @@ public class PageFragment extends Fragment {
     public void setData(String _data) {
 
         data = _data;
-        if(tvPagerData != null && data != null) {
+        if(tvPagerData != null) {
             tvPagerData.setText(data);
         }
     }
@@ -46,9 +46,6 @@ public class PageFragment extends Fragment {
     @Override
     public void onAttach(Context _context) {
         super.onAttach(_context);
-        if(tvPagerData != null && data != null) {
-            tvPagerData.setText(data);
-        }
     }
 
     @Override
@@ -67,10 +64,6 @@ public class PageFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState)
     {
         super.onActivityCreated(savedInstanceState);
-
-        if(tvPagerData != null) {
-            tvPagerData.setText(data);
-        }
     }
 
     @Override

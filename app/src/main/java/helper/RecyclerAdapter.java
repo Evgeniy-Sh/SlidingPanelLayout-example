@@ -58,9 +58,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerHolder> {
         return new RecyclerHolder(v);
     }
 
-    /**
-     * Заполнение виджетов View данными из элемента списка с номером i
-     */
     @Override
     public void onBindViewHolder(final RecyclerHolder favoriteHolder, final int position) {
 
@@ -100,7 +97,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerHolder> {
 
     private void setAnimation(View viewToAnimate, int position)
     {
-        // If the bound view wasn't previously displayed on screen, it's animated
         if (viewToAnimate != null)
         {
             Animation animation = AnimationUtils.loadAnimation(mainContext, R.anim.fade_in);
